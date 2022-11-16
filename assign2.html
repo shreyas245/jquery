@@ -1,0 +1,19 @@
+<html>
+<body>
+<form>
+<input type="text" id="task">
+<input type="submit">
+</form>
+<script>
+document.querySelector('form').addEventListener('submit',function(e){
+const task = document.querySelector('#task').value;
+let tasks;
+if(localStorage.getItem('task')===null){tasks = [];}
+else{tasks = localStorage.getItem('tasks')}
+tasks.push(task)
+document.write(task)
+localStorage.setItem('tasks',JSON.stringify(tasks));
+})
+</script>
+</body>
+</html>
